@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@font-face {
+    font-family: 'Akazan';
+    src: url("./AkazanRegular/Akazan\ Regular.ttf");
+}
 html{
     font-family: "Inter", serif;
     box-sizing: border-box;
 }
 :root{
-    --container-width:1200px;
     --container-padding:20px;
     --main-color:#FFFFFF;
+    --main-heading:#101828;
+
 }
 *,*::before,*::after{
     box-sizing: border-box;
@@ -21,18 +25,21 @@ ul li a{
     color: var(--main-color);
     text-decoration: none;
 }
-
+h3,h4,h5,h6{
+    color: var(--main-heading);
+}
 .container{
     width: 85%;
     margin-inline: auto;
     padding-inline: var(--container-padding);
 }
+
+
 /** Header and Navbar*/
 header{
     background-color: #0B9586;
     padding: 10px 0;
 }
-
 header .container{
 display: flex;
 align-items: center;
@@ -60,6 +67,9 @@ header .container ul{
 }
 header .container ul li a.active{
     opacity: 1;
+    background: #0000000F;
+    border-bottom: 3px solid #0000004D;
+    padding: 8px 28px;
 }
 header .container ul li a:not(.active){
 opacity: 0.7;
@@ -72,6 +82,8 @@ header .container .calls{
 header .container .calls span:first-child{
     align-self: flex-end;
 }
+
+
 /**Hero*/
 .hero{
     background-image: url("./images/solar-panels-meadow\ 1.png");
@@ -221,9 +233,13 @@ margin-top: 60px;
     bottom: 20px;
 }
 .section-two .container .content-section2  .right-section .wall p{
-    line-height: 22px;
+    line-height: 21px;
+    font-family: 'Akazan', sans-serif;
+    opacity: 0.8;
+    font-weight: 400;
 }
 /* Section-Two */
+
 
 /* Section-Three */
 .section-three{
@@ -284,7 +300,7 @@ gap: 2rem;
 }
 .Section-Four .cards .card{
     background-color: var(--main-color);
-    box-shadow: 1px 1px 5px #cccccca4;
+    box-shadow: 0px 4px 30px 0px #0000000D;
 }
 .Section-Four .cards .card img{
     width: 100%;
@@ -386,16 +402,30 @@ animation: MyMove 0.4s linear  infinite alternate;
     background-color: #3CAB900D;
     border: 1px solid #3CAB90;
     box-shadow: 0px 4px 30px 0px #0000000D;
-    padding: 24px;
+    padding: 15px;
     border-radius: 12px;
+    box-sizing: content-box !important;
 
 }
 
-.section-six .content .right-section .card img{
-width:100%;
-height: 80px;
-border-radius: 12px;
-mix-blend-mode: Luminosity;
+.section-six .content .right-section .card .img{
+    width: 100%;
+    height: 95px;
+    border-radius: 10px;
+    background-image: url("./images/placeholder-img.jpeg");
+    background-size: cover;   
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative;
+}
+.section-six .content .right-section .card .img::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #3CAB9026;
 }
 .section-six .right-section .card h3{
     margin:1rem 0;
@@ -425,6 +455,22 @@ mix-blend-mode: Luminosity;
     flex-direction: column;
     row-gap: 1rem;
 }
+
+.section8 .container .content .right-section > div:first-of-type{
+    display: flex;
+    justify-content: space-between;
+}
+.section8 .container .content .right-section .points span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.section8 .container .content .right-section .points span:first-of-type{
+    background: #6B6B6B;
+}
 .section8 .container .content .left-section p{
     font-size: 14px;
 }
@@ -436,39 +482,49 @@ mix-blend-mode: Luminosity;
     flex-direction: column;
     row-gap: 2rem;
 }
-.section8 .container .content .right-section p{
-    width:60%;
-    line-height: 1.5rem;
-}
+
 .section8 .container .content .right-section .additional-info{
 display: flex;
 align-items: center;
-gap: 1rem;
+justify-content: space-between;
 }
-.section8 .container .content .right-section .additional-info div:first-child{
-    line-height: 1.3rem;
+.section8 .container .content .right-section .additional-info .personal-info{
+    display: flex;
+     align-items: center;
+     gap: 0.7rem;
+     line-height: 1.3rem;
 }
-.section8 .container .content .right-section .additional-info div:last-child{
-    flex-grow: 1;
-    text-align: right;
+.section8 .container .content .right-section .additional-info .personal-info p{
+    font-size: 13px;
+    opacity: 0.7;
 }
+
 /* Section 8 */
 
 /* Footer */
-/* Footer */
+
 footer{
     background-color: #101828;
     padding: 60px 0;
 }
-footer .img img{
+footer .img{
+    width: 185px;
+    height: 64px;
+    background-image: url("./images/placeholder-img.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     mix-blend-mode: luminosity;
 }
+
 footer .container .content .contact{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 40px;
     border-bottom: 1px solid #B3BDC7;
+    opacity: 0.6;
+    font-size: 15px;
 }
 footer .container .content .contact ul{
     display: flex;
@@ -480,33 +536,40 @@ footer .container .content .contact .email p{
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
+    opacity: 0.8;
 }
 footer .container .content .contact .email .input{
-    position: relative;
+   display: flex;
+   width: 350px;
+   height: 48px;
+   position: relative;
 }
 footer .container .content .contact .email input{
 width: 100%;
-padding: 12px 10px;
+padding: 12px 15px;
 border: none;
 background-color: transparent;
-background-color: #B3BDC7;
 outline: none;
-border: 1px solid #B3BDC7;
-border-radius: 24px;
+border: 1px solid #92989f57;
+border-radius: 109px;
+background: #92989f57;
+opacity: 0.8;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+border-right: 0;
+caret-color: var(--main-color);
 }
-footer .container .content .contact .email .input::after{
-    content: "Subscribe";
-    background: #FFBB1C;
-    position: absolute;
-    right: -50px;
-    top: 0;
-    height: 100%;
+
+footer .container .content .contact .input button{
+    background-color: transparent;
+    border: none;
+    background-color: #FFBB1C;
+    border-radius: 109px;
     color: var(--main-color);
-    font-size: 13px;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 24px;
-    cursor: pointer;
+    height: 100%;
+    padding: 12px 34px;
+    position: absolute;
+    right: -20px;
 }
 footer .container .content .copy {
     margin-top: 40px;
@@ -523,6 +586,15 @@ footer .container .content .copy .copyright{
     color: #92989F ;
     font-size: 11px;
 }
+
+
+/* Footer */
+
+
+/* Media Queries */
+
+
+
 @media (max-width:1200px) {
     .container{
         width: 90% !important;
@@ -667,16 +739,41 @@ footer .container .content .copy .copyright{
     .section8 .container .content .right-section,
     .section8 .container .content .right-section p {
         width: 100%;
+        font-size: 13px;
+line-height: 1.6;
+    }
+    .section8 .container .content .right-section .additional-info .personal-info p{
+        line-height: 1.4;
+        font-size: 11px;
+    }
+    
+    .section8 .container .content .right-section .points span{
+        width: 6px;
+        height: 6px;
     }
     .section8 .container .content .right-section .additional-info {
         flex-direction: column;
-        align-items: self-start;
+        align-items: flex-start;
+        row-gap: 0.7rem;
+        width: 100%;
+        box-sizing: content-box;
+    }
+}
+
+.section8 .container .content .right-section .additional-info svg{
+    align-self: center;
+}
+    footer .container .content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
     }
     footer .container .content .email{
         margin: 20px 0;
     }
     footer .container .content .contact {
-        font-size: 13px;
+        font-size: 12px;
+        opacity: 0.7;
     }
     footer .container .content .contact{
         flex-direction: column-reverse;
@@ -692,9 +789,18 @@ footer .container .content .copy .copyright{
         row-gap: 1rem;
     }
     footer .img{
+        margin-inline: auto;
+    }
+    footer .container .content .contact .email{
+        width: 100%;
+    }
+    footer .container .content .contact .email .input{
+        width: 90%;
+    }
+    footer .container .content .contact .email p{
         text-align: center;
     }
-}
+
 @media (max-width:600px) {
     .container{
         width: 100% !important;
@@ -763,6 +869,8 @@ footer .container .content .copy .copyright{
     }
 }
 
+/* Animation  */
+
 @keyframes MyMove {
     0%{
         transform: translateX(0);
@@ -771,3 +879,4 @@ footer .container .content .copy .copyright{
         transform: translateX(5px);
     }
 }
+/* Animation */
