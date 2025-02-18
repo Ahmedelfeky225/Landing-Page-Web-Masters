@@ -11,8 +11,8 @@ html{
     --container-padding:20px;
     --main-color:#FFFFFF;
     --main-heading:#101828;
-
 }
+
 *,*::before,*::after{
     box-sizing: border-box;
     margin: 0;
